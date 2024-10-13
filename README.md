@@ -6,15 +6,6 @@ UEFI Doom uses [POSIX-UEFI](https://gitlab.com/bztsrc/posix-uefi) as a developme
 to create the UEFI application, this is the easiest way, as it already implements most of
 the LibC functions used by Doom.
 
-To use POSIX-UEFI in UEFI Doom, you need to clone the repository and create a symlink to
-the donwloaded directory.
-
-```bash
-git clone https://gitlab.com/bztsrc/posix-uefi.git
-cd doomgeneric/doomgeneric
-ln -s ../../posix-uefi/uefi
-```
-
 The Makefile will do the rest of the work.
 
 To simplify the running of the program with QEMU, [uefi-run](https://github.com/Richard-W/uefi-run)

@@ -1673,7 +1673,7 @@ void G_DoSaveGame (void)
     // file, overwriting the old savegame if there was one there.
 
     remove(savegame_file);
-    rename(temp_savegame_file, savegame_file);
+    // rename(temp_savegame_file, savegame_file);
     
     gameaction = ga_nothing;
     M_StringCopy(savedescription, "", sizeof(savedescription));
