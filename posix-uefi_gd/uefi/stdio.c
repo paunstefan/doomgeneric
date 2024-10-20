@@ -815,3 +815,9 @@ int putchar (int __c)
     ST->ConOut->OutputString(ST->ConOut, (__c == L'\n' ? (wchar_t*)L"\r\n" : (wchar_t*)&tmp));
     return (int)tmp[0];
 }
+
+int puts(const char *s){
+    for(char *c = s; c != 0; c++){
+        putchar(*c);
+    }
+}

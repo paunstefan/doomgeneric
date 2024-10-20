@@ -17,6 +17,7 @@
 //
 
 
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -184,12 +185,12 @@ static void saveg_write_pad(void)
 
 static void *saveg_readp(void)
 {
-    return (void *) (intptr_t) saveg_read32();
+    return (void *) (uint64_t) saveg_read32();
 }
 
 static void saveg_writep(void *p)
 {
-    saveg_write32((intptr_t) p);
+    saveg_write32((uint64_t) p);
 }
 
 // Enum values are 32-bit integers.

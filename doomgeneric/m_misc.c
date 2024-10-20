@@ -32,8 +32,8 @@
 #include <direct.h>
 #endif
 #else
-#include <sys/stat.h>
-#include <sys/types.h>
+// #include <sys/stat.h>
+// #include <sys/types.h>
 #endif
 
 #include "doomtype.h"
@@ -54,11 +54,12 @@
 
 void M_MakeDirectory(char *path)
 {
-#ifdef _WIN32
-    mkdir(path);
-#else
-    mkdir(path, 0755);
-#endif
+    //TODO doomgeneric
+// #ifdef _WIN32
+//     mkdir(path);
+// #else
+//     mkdir(path, 0755);
+// #endif
 }
 
 // Check if a file exists
@@ -189,10 +190,12 @@ char *M_TempFile(char *s)
 
 boolean M_StrToInt(const char *str, int *result)
 {
-    return sscanf(str, " 0x%x", result) == 1
-        || sscanf(str, " 0X%x", result) == 1
-        || sscanf(str, " 0%o", result) == 1
-        || sscanf(str, " %d", result) == 1;
+    // TODO doomgeneric
+    // return sscanf(str, " 0x%x", result) == 1
+    //     || sscanf(str, " 0X%x", result) == 1
+    //     || sscanf(str, " 0%o", result) == 1
+    //     || sscanf(str, " %d", result) == 1;
+    return 0;
 }
 
 void M_ExtractFileBase(char *path, char *dest)

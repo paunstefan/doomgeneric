@@ -34,5 +34,6 @@ extern int getchar (void);
 /* non-blocking, only returns UNICODE if there's any key pressed, 0 otherwise */
 extern int getchar_ifany (void);
 extern int putchar (int __c);
+extern int puts(const char *s);
 
 #endif

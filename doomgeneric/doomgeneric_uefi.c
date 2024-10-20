@@ -1,7 +1,13 @@
+#include <stdint.h>
 #include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <time.h>
 #include <uefi.h>
 #include "doomgeneric.h"
 
+
+extern time_t __mktime_efi(efi_time_t *t);
 uint64_t get_time_ms();
 
 uint64_t ticks_init;
@@ -31,7 +37,7 @@ void DG_Init()
 
     gop->QueryMode(gop, gop->Mode ? gop->Mode->Mode : 0, &isiz, &info);
 
-    fb = gop->Mode->FrameBufferBase;
+    fb = (uint32_t*)gop->Mode->FrameBufferBase;
     ppl = info->PixelsPerScanLine;
 }
 
@@ -56,6 +62,7 @@ uint32_t DG_GetTicksMs()
 
 int DG_GetKey(int *pressed, unsigned char *doomKey)
 {
+    return 0;
 }
 
 void DG_SetWindowTitle(const char *title)
