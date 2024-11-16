@@ -171,7 +171,7 @@ void I_PrintBanner(char *msg)
     for (i=0; i<spaces; ++i)
         putchar(' ');
 
-    puts(msg);
+    printf("%s", msg);
 }
 
 void I_PrintDivider(void)

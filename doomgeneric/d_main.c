@@ -666,12 +666,12 @@ static char *GetGameName(char *gamename)
             M_snprintf(gamename, gamename_size, deh_sub,
                        version / 100, version % 100);
 
-            while (gamename[0] != '\0' && isspace((int)gamename[0]))
+            while (gamename[0] != '\0' && gamename[0] == ' ')
             {
                 memmove(gamename, gamename + 1, gamename_size - 1);
             }
 
-            while (gamename[0] != '\0' && isspace((int)gamename[strlen(gamename)-1]))
+            while (gamename[0] != '\0' && gamename[strlen(gamename)-1] == ' ')
             {
                 gamename[strlen(gamename) - 1] = '\0';
             }
@@ -1356,11 +1356,11 @@ void D_DoomMain (void)
     // Load configuration files before initialising other subsystems.
     DEH_printf("M_LoadDefaults: Load system defaults.\n");
     M_SetConfigFilenames("default.cfg", PROGRAM_PREFIX "doom.cfg");
-    D_BindVariables();
-    M_LoadDefaults();
+    // D_BindVariables();
+    // M_LoadDefaults();
 
     // Save configuration at exit.
-    I_AtExit(M_SaveDefaults, false);
+    // I_AtExit(M_SaveDefaults, false);
 
     // Find main IWAD file and load it.
     iwadfile = D_FindIWAD(IWAD_MASK_DOOM, &gamemission);

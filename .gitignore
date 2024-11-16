@@ -9,5 +9,5 @@
 Debug/
 Release/
 
-*.WAD
+*.wad
 OVMF.fd
